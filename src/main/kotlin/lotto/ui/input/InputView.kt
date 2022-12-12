@@ -8,29 +8,15 @@ class InputView {
     private val inputValidations = InputValidations()
 
     fun readMoney(input: String): Int {
-        return try {
-            inputValidations.checkDigit(input)
-            inputValidations.checkRemainder(input)
-        } catch (e: IllegalArgumentException) {
-            0
-        }
+        inputValidations.checkDigit(input)
+        return inputValidations.checkRemainder(input)
     }
 
-    fun readWinningNumbers(input: String): Lotto? {
-        return try {
-            Lotto(inputValidations.checkLottoDigit(input))
-        } catch (e: IllegalArgumentException) {
-            null
-        }
-    }
+    fun readWinningNumbers(input: String): Lotto = Lotto(inputValidations.checkLottoDigit(input))
 
     fun readBonusNumber(input: String): Int {
-        return try {
-            inputValidations.checkDigit(input)
-            input.toInt()
-        } catch (e: IllegalArgumentException) {
-            0
-        }
+        inputValidations.checkDigit(input)
+        return input.toInt()
     }
 
     fun getInput(): String = Console.readLine()
