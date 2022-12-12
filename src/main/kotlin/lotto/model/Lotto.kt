@@ -9,7 +9,7 @@ class Lotto(private val numbers: List<Int>) {
 
     // TODO: 추가 기능 구현
 
-    fun contains(bonusNumber: Int): Boolean {
+    fun contain(bonusNumber: Int): Boolean {
         return true
     }
 }
