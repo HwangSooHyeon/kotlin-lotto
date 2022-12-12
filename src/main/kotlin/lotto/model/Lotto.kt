@@ -12,4 +12,8 @@ class Lotto(private val numbers: List<Int>) {
     fun contain(bonusNumber: Int): Boolean {
         return true
     }
+
+    override fun toString(): String {
+        return numbers.joinToString(", ", "[", "]")
+    }
 }
