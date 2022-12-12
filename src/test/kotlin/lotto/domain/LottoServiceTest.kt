@@ -13,7 +13,7 @@ internal class LottoServiceTest {
     @Test
     fun `로또 번호 생성 테스트`() {
         val money = 14000
-        assertThat(lottoService.makeLotto(14000).also { println(it) }).hasSize(14)
+        assertThat(lottoService.makeLotto(14000).onEach { println(it.toString()) }).hasSize(14)
     }
 
     @Test
