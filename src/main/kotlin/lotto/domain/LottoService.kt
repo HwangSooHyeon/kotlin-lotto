@@ -9,7 +9,11 @@ class LottoService {
         return listOf(Lotto(listOf()))
     }
 
-    fun winningRate(lottos: List<Lotto>, winningLotto: WinningLotto): List<Rating> {
+    fun checkRate(lottos: List<Lotto>, winningLotto: WinningLotto): List<Rating> {
         return listOf(Rating.FIRST)
+    }
+
+    fun calculateStats(winningRate: List<Rating>, money: Int): Double {
+        return 0.0
     }
 }

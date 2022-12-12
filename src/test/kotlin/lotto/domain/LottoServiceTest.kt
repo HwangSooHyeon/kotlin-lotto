@@ -1,11 +1,10 @@
 package lotto.domain
 
 import lotto.model.Lotto
+import lotto.model.Rating
 import lotto.model.WinningLotto
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-
-import org.junit.jupiter.api.Assertions.*
 
 internal class LottoServiceTest {
 
@@ -30,6 +29,19 @@ internal class LottoServiceTest {
             Lotto(listOf(1, 3, 5, 14, 22, 45))
         )
         val winningLotto = WinningLotto(Lotto(listOf(8, 21, 23, 41, 42, 43)), 1)
-        assertThat(lottoService.winningRate(lottos, winningLotto)).hasSize(8)
+        assertThat(lottoService.checkRate(lottos, winningLotto)).hasSize(8)
+    }
+
+    @Test
+    fun `통계 계산 테스트`() {
+        val winningRate = listOf<Rating>(
+            Rating.FIFTH, Rating.LOSE, Rating.LOSE,
+            Rating.LOSE, Rating.LOSE, Rating.LOSE,
+            Rating.LOSE, Rating.LOSE, Rating.LOSE,
+            Rating.LOSE, Rating.LOSE, Rating.LOSE,
+            Rating.LOSE, Rating.LOSE
+        )
+        val money = 14000
+        assertThat(lottoService.calculateStats(winningRate, money)).isEqualTo(62.5)
     }
 }
