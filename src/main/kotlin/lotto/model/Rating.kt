@@ -9,4 +9,6 @@ enum class Rating(private val prize: Int) {
     LOSE(0);
 
     fun getPrize(): Int = prize
+
+    override fun toString(): String = name
 }

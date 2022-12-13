@@ -29,7 +29,7 @@ internal class LottoServiceTest {
             Lotto(listOf(1, 3, 5, 14, 22, 45))
         )
         val winningLotto = WinningLotto(Lotto(listOf(8, 21, 23, 41, 42, 43)), 1)
-        assertThat(lottoService.checkRate(lottos, winningLotto)).hasSize(8)
+        assertThat(lottoService.checkRate(lottos, winningLotto).also { println(it.toString()) }).hasSize(8)
     }
 
     @Test

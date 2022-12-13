@@ -7,11 +7,9 @@ class Lotto(private val numbers: List<Int>) {
         require(numbers.all { it in 1..45 })
     }
 
-    // TODO: 추가 기능 구현
+    fun getNumbers(): List<Int> = numbers
 
-    fun contain(bonusNumber: Int): Boolean {
-        return true
-    }
+    fun contain(number: Int): Boolean = numbers.contains(number)
 
     override fun toString(): String {
         return numbers.joinToString(", ", "[", "]")
