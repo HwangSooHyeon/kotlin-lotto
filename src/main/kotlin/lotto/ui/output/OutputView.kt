@@ -16,7 +16,7 @@ enum class LottoMessages(private val message: String) {
     FIRST("6개 일치 (2,000,000,000원) - "),
     TOTAL_STATS("총 수익률은 "),
     COUNT("개"),
-    IS("입니다.");
+    PERCENT_IS("%입니다.");
 
     override fun toString(): String = message
 }
@@ -39,6 +39,6 @@ class OutputView {
         println("${LottoMessages.THIRD}${rates.count { it == Rating.THIRD }}${LottoMessages.COUNT}")
         println("${LottoMessages.SECOND}${rates.count { it == Rating.SECOND }}${LottoMessages.COUNT}")
         println("${LottoMessages.FIRST}${rates.count { it == Rating.FIRST }}${LottoMessages.COUNT}")
-        println("${LottoMessages.TOTAL_STATS}${totalStats}${LottoMessages.IS}")
+        println("${LottoMessages.TOTAL_STATS}${totalStats}${LottoMessages.PERCENT_IS}")
     }
 }
