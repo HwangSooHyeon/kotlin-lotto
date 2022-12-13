@@ -37,11 +37,9 @@ internal class LottoServiceTest {
         val winningRate = listOf<Rating>(
             Rating.FIFTH, Rating.LOSE, Rating.LOSE,
             Rating.LOSE, Rating.LOSE, Rating.LOSE,
-            Rating.LOSE, Rating.LOSE, Rating.LOSE,
-            Rating.LOSE, Rating.LOSE, Rating.LOSE,
             Rating.LOSE, Rating.LOSE
         )
-        val money = 14000
+        val money = 8000
         assertThat(lottoService.calculateStats(winningRate, money)).isEqualTo(62.5)
     }
 }

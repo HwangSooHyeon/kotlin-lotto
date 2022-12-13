@@ -27,9 +27,12 @@ class LottoService {
         return rates
     }
 
-    fun calculateStats(winningRate: List<Rating>, money: Int): Double {
-
-        return 0.0
+    fun calculateStats(rates: List<Rating>, money: Int): Double {
+        var totalPrize = 0.0
+        for (rate in rates) {
+            totalPrize += rate.getPrize()
+        }
+        return (totalPrize / money) * 100
     }
 
     private fun createNumbers(): List<Int> = Randoms.pickUniqueNumbersInRange(START, END, COUNT).sorted()
