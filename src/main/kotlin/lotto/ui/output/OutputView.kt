@@ -6,6 +6,7 @@ enum class LottoMessages(private val message: String) {
     INPUT_MONEY("구입금액을 입력해 주세요."),
     NUMBERS_OF_PURCHASED("개를 구매했습니다."),
     INPUT_WINNING_NUMBERS("당첨 번호를 입력해 주세요."),
+    INPUT_BONUS_NUMBER("보너스 번호를 입력해 주세요."),
     WINNING_STATS("당첨 통계"),
     DIVIDER("---"),
     FIFTH("3개 일치 (5,000원) - "),
@@ -24,9 +25,11 @@ class OutputView {
 
     fun printInputMoney() = println(LottoMessages.INPUT_MONEY.toString())
 
-    fun printPurchased() = println(LottoMessages.NUMBERS_OF_PURCHASED.toString())
+    fun printPurchased(count: Int) = println("${count}${LottoMessages.NUMBERS_OF_PURCHASED}")
 
     fun printInputWinningNumbers() = println(LottoMessages.INPUT_WINNING_NUMBERS.toString())
+
+    fun printInputBonusNumber() = println(LottoMessages.INPUT_BONUS_NUMBER.toString())
 
     fun printWinningStats(rates: List<Rating>, totalStats: Double) {
         println(LottoMessages.WINNING_STATS.toString())

@@ -19,5 +19,5 @@ class InputView {
         return input.toInt()
     }
 
-    fun getInput(): String = Console.readLine()
+    fun readInput(): String = Console.readLine()
 }
