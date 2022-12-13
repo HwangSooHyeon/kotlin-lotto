@@ -16,7 +16,7 @@ class InputValidations {
 
     fun checkLottoDigit(input: String): List<Int> {
         val numbers = input.split(",")
-        require(numbers.joinToString().all { it.isDigit() }) { "$PREFIX 숫자가 아닙니다." }
+        require(numbers.joinToString("").all { it.isDigit() }) { "$PREFIX 숫자가 아닙니다." }
         return numbers.map { it.toInt() }.sorted()
     }
 }
